@@ -52,6 +52,7 @@ RUN apt install -y mesa-utils xserver-xorg-video-all
 ENV WINEDEBUG -all,err+all,warn+chain,warn+cryptnet
 
 USER ubuntu
+RUN winetricks grabfullscreen=y usetakefocus=n
 
 CMD ["/usr/bin/wine", ".wine/drive_c/Program Files/Wizards of the Coast/MTGA/MTGA.exe"]
 
