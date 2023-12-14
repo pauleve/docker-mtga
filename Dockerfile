@@ -28,3 +28,5 @@ COPY start-mtga /usr/local/bin/mtga
 
 USER wine
 
+RUN winetricks renderer=vulkan
+
