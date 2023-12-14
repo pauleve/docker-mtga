@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -x
+winetricks renderer=vulkan
+wine "~/.wine/drive_c/Program Files/Wizards of the Coast/MTGA/MTGA.exe"

@@ -148,14 +148,14 @@ if [ ! -d ${local_data} ]; then
     mkdir -p ${local_data}
 fi
 
-opts+=("-v" "${data}:/home/user")
+opts+=("-v" "${data}:/home/wine")
 
 XSOCK="/tmp/.X11-unix"
 XAUTH="${local_data}/Xauthority"
 > ${XAUTH}
 xauth nlist ${DISPLAY} | sed -e 's/^..../ffff/' | xauth -f ${XAUTH} nmerge -
 opts+=("-v" "${XSOCK}:${XSOCK}:rw")
-opts+=("-v" "${XAUTH}:/home/user/.Xauthority:ro")
+opts+=("-v" "${XAUTH}:/home/wine/.Xauthority:ro")
 
 if $do_sound; then
     _host_pulse="/run/user/${_host_uid}/pulse/native"
